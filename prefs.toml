@@ -1,8 +1,7 @@
 [Preferences]
    # DestinationShardAsObserver represents the desired shard when running as observer
-   # value will be given as string. For example: "0", "1", "15", "metachain"
-   # if "disabled" is provided then the node will start in the corresponding shard for its public key or 0 otherwise
-   DestinationShardAsObserver = "disabled"
+   # value should always be "0" for sovereign chain observer
+   DestinationShardAsObserver = "0"
 
    # NodeDisplayName represents the friendly name a user can pick for his node in the status monitor when the node does not run in multikey mode
    # In multikey mode, all bls keys not mentioned in NamedIdentity section will use this one as default
@@ -41,19 +40,17 @@
    # The Path indicates what value to change, while Value represents the new value. The node operator must make sure
    # to follow the same type of the original value (ex: uint32: 37, float32: 37.0, bool: true)
    # Also, the Value can be a struct (ex: { StartEpoch = 0, Version = "1.5" }) or an array (ex: [{ StartEpoch = 0, Version = "1.4" }, { StartEpoch = 1, Version = "1.5" }])
-   # File represents the file name that holds the configuration. Currently, the supported files are:
-   # api.toml, config.toml, economics.toml, enableEpochs.toml, enableRounds.toml, external.toml, fullArchiveP2P.toml, p2p.toml, ratings.toml, systemSmartContractsConfig.toml
+   # File represents the file name that holds the configuration. Currently, the supported files are: config.toml, external.toml, p2p.toml, enableEpochs.toml and fullArchiveP2P.toml
    # -------------------------------
    # Un-comment and update the following section in order to enable config values overloading
    # -------------------------------
-   # OverridableConfigTomlValues = [
-   # { File = "config.toml", Path = "StoragePruning.NumEpochsToKeep", Value = 4 },
-   # { File = "config.toml", Path = "MiniBlocksStorage.Cache.Name", Value = "MiniBlocksStorage" },
-   # { File = "external.toml", Path = "ElasticSearchConnector.Enabled", Value = true },
-   # { File = "external.toml", Path = "HostDriversConfig", Value = [
-   #    { Enabled = false, URL = "127.0.0.1:22111" },
-   # ] },
-   # ]
+   OverridableConfigTomlValues = [
+      { File = "config.toml", Path = "VirtualMachine.Execution.WasmVMVersions", Value = [{ StartEpoch = 0, Version = "v1.5" }] },
+      { File = "config.toml", Path = "VirtualMachine.Querying.WasmVMVersions", Value = [{ StartEpoch = 0, Version = "v1.5" }] },
+      { File = "config.toml", Path = "Versions.DefaultVersion", Value = "S1" },
+      { File = "config.toml", Path = "Versions.VersionsByEpochs", Value = [{ StartEpoch = 0, Version = "S1" }] },
+      { File = "systemSmartContractsConfig.toml", Path = "ESDTSystemSCConfig.BaseIssuingCost", Value = "50000000000000000" },
+   ]
 
 # BlockProcessingCutoff can be used to stop processing blocks at a certain round, nonce or epoch.
 # This can be useful for snapshotting different stuff and also for debugging purposes.
