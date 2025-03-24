@@ -40,9 +40,9 @@
     CPUFlags = ["SSE4", "SSE42"]
 
 [Versions]
-    DefaultVersion = "default"
+    DefaultVersion = "S1"
     VersionsByEpochs = [
-        { StartEpoch = 0, Version = "2" },
+        { StartEpoch = 0, Version = "S1" },
     ]
     [Versions.Cache]
         Name = "VersionsCache"
