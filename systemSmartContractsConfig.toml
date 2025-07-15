@@ -15,7 +15,7 @@
     NodeLimitPercentage = 0.1 #fraction of value 0.1 - 10%
 
 [ESDTSystemSCConfig]
-    BaseIssuingCost = "5000000000000000000" #5 eGLD
+    BaseIssuingCost = "50000000000000000" #0.05 eGLD
     OwnerAddress = "erd1fpkcgel4gcmh8zqqdt043yfcn5tyx8373kg6q2qmkxzu4dqamc0swts65c"
     ESDTPrefix = "sov"
 
