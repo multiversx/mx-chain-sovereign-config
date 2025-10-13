@@ -342,6 +342,36 @@
     # ConsensusModelV2EnableEpoch represents the epoch when the consensus model V2 is enabled
     ConsensusModelV2EnableEpoch = 0
 
+    # AndromedaEnableEpoch represents the epoch when the equivalent messages and fix order for consensus features are enabled
+    AndromedaEnableEpoch = 0
+
+    # CheckBuiltInCallOnTransferValueAndFailEnableRound represents the ROUND when the check on transfer value fix is activated
+    CheckBuiltInCallOnTransferValueAndFailEnableRound = 0 # THIS MUST BE A ROUND
+
+    # MaskVMInternalDependenciesErrorsEnableEpoch represents the epoch when the additional internal erorr masking in vm is enabled
+    MaskVMInternalDependenciesErrorsEnableEpoch = 0
+
+    # FixBackTransferOPCODEEnableEpoch represents the epoch when the fix for back transfers opcode will be enabled
+    FixBackTransferOPCODEEnableEpoch = 0
+
+    # ValidationOnGobDecodeEnableEpoch represents the epoch when validation on GobDecode will be taken into account
+    ValidationOnGobDecodeEnableEpoch = 0
+
+    # BarnardOpcodesEnableEpoch represents the epoch when Barnard opcodes will be enabled
+    BarnardOpcodesEnableEpoch = 0
+
+    # AutomaticActivationOfNodesDisableEpoch represents the epoch when automatic activation of nodes for validators is disabled
+    AutomaticActivationOfNodesDisableEpoch = 0
+
+    # GovernanceDisableProposeEnableEpoch represents the epoch when governance disable proposal is enabled
+    GovernanceDisableProposeEnableEpoch = 0
+
+    # GovernanceFixesEnableEpoch represents the epoch when governance fixes are enabled
+    GovernanceFixesEnableEpoch = 0
+
+    # FixGetBalanceEnableEpoch represents the epoch when get balance opcode fix will be enabled
+    FixGetBalanceEnableEpoch = 0
+
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
         { EnableEpoch = 0, Type = "KOSK"}
@@ -355,7 +385,7 @@
 [GasSchedule]
     # GasScheduleByEpochs holds the configuration for the gas schedule that will be applied from specific epochs
     GasScheduleByEpochs = [
-        { StartEpoch = 0, FileName = "gasScheduleV8.toml" },
+        { StartEpoch = 0, FileName = "gasScheduleV9.toml" },
     ]
 
 [SovereignEnableEpochs]

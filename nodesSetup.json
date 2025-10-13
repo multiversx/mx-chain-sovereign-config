@@ -1,12 +1,5 @@
 {
-  "startTime": 0,
-  "roundDuration": 600,
-  "consensusGroupSize": 20,
-  "minNodesPerShard": 20,
-  "metaChainConsensusGroupSize": 0,
-  "metaChainMinNodes": 0,
-  "hysteresis": 0.2,
-  "adaptivity": false,
+  "startTime": 1596117600,
   "initialNodes": [
     {
       "info": "multikey - group1 - legacy delegation",
